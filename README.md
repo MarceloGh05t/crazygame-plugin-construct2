@@ -47,6 +47,7 @@ function adStarted () {
  Condições no plugin:
  
 - Ad Requested (adRequested):
+
 O que faz: verifica se foi requisitada uma propaganda (ad) para poder ser criada ação de mutar o som da app ou jogo e parar o tempo. Porém como pode exister um tempo de resposta para o anúncio aparecer.
 
 Código na runtime:
