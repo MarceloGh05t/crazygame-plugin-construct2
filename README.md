@@ -61,3 +61,21 @@ Código na runtime:
 	}	
 	};
  ```
+
+- Ad Started (adStarted):
+
+O que faz: checa se a propaganda (ad) começou, ela pode ser usada do lugar da condição ad Requested, pois só é acionada com o surgimento da propaganda.
+
+Código na runtime:
+
+ ```
+ Cnds.prototype.adStarted = function ()
+	{
+	if(crazysdk.adStarted){
+			
+		return true
+	}
+	};
+
+ ```
+ 
