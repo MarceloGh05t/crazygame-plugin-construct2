@@ -18,3 +18,28 @@ Código na runtime:
 
 	};
  ```
+ 
+- Request Ads (ShowAds):
+
+O que faz: Depois que a sdk for incializada vai requesitar um anúncio e exebir em seguida, depois cria gatilhos para quando a requisiçao do anúncio e quando ele for exibidos para poder serem usados nas comparações. No modo preview do construct2 vai mostrar uma imagem no lugar do anúncio, mas na QATool da game crazy dá pra testar em tempo real, usando iframe e o link do localhost, que o construct gera no preview.
+
+Código na runtime:
+
+ ```
+ function adFinished (){
+    crazysdk.adRequested = false;
+	crazysdk.adStarted = false // add este para comparar tnato pelo requisicao da ad ou quando o anuncio realmente começa
+  };  
+  
+function adStarted () {
+    crazysdk.adStarted = true; // antes eles faziam o som parar neste momento so add a condicao verdadeira para poder colocar na condicao quando a ad aparecer, ja q tem um lag de quando é solicitada
+  };
+  
+ 	Acts.prototype.ShowAds = function ()
+	{
+	crazysdk.adRequested = true;
+	crazysdk.requestAd("midgame");
+	crazysdk.addEventListener("adFinished", adFinished) // vai add o evento "adFinished" e quando foi acionado chama a funcao adFinished
+	crazysdk.addEventListener("adStarted", adStarted) // vai add o evento "adStarted" e quando foi acionado chama a funcao adStart
+	}
+ ```
