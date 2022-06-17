@@ -43,3 +43,20 @@ function adStarted () {
 	crazysdk.addEventListener("adStarted", adStarted) // vai add o evento "adStarted" e quando foi acionado chama a funcao adStart
 	}
  ```
+ 
+ Condições no plugin:
+ 
+- Ad Requested (adRequested):
+O que faz: verifica se foi requisitada uma propaganda (ad) para poder ser criada ação de mutar o som da app ou jogo e parar o tempo. Porém como pode exister um tempo de resposta para o anúncio aparecer.
+
+Código na runtime:
+ 
+ ```
+ Cnds.prototype.adRequested = function ()
+	{
+	if(crazysdk.adRequested){
+		  
+		return true
+	}	
+	};
+ ```
