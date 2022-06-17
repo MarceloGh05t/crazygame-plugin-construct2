@@ -12,6 +12,9 @@ O que faz: Inicia a sdk da crazy games e precisa ser colocada numa ação a ser 
 Código na runtime:
 
  ```
+//também tem o código da sdk deles, como é extensão não coloquei aqui, mas pode ser acessada no link: https://sdk.crazygames.com/crazygames-sdk-v1.js baseado na doc do link: https://docs.crazygames.com/sdk/html5/
+ const crazysdk = window.CrazyGames.CrazySDK .getInstance(); // getting the SDK
+ 
 	Acts.prototype.InitSDK = function ()
 	{
 	crazysdk.init() // initializing the SDK, call as early as possible
@@ -79,3 +82,18 @@ Código na runtime:
 
  ```
  
+- Ad Finished (adFinished):
+
+O que faz: checa se a propaganda terminou para poder criar ações para o volume do app ou jogo voltar e voltar o tempo para a escala normal.
+
+Código na runtime:
+
+ ```
+ Cnds.prototype.adFinished = function ()
+	{
+	if(crazysdk.adRequested === false){
+		
+		return true
+	}	
+	};
+ ```
