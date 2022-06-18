@@ -7,7 +7,7 @@ Ações no plugin:
 
 - Init SDK (InitSDK): 
 
-O que faz: Inicia a sdk da crazy games e precisa ser colocada numa ação a ser executada antes do anúncio, como por exemplo no start of layout. E add dos escutadores de eventos para poder ser usadas as comparações criadas neste código.
+O que faz: Inicia a sdk da crazy games e precisa ser colocada numa ação a ser executada antes do anúncio, como por exemplo no start of layout. E adicona dois escutadores de eventos para poder ser usadas as comparações criadas neste plugin.
 
 Código na runtime:
 
